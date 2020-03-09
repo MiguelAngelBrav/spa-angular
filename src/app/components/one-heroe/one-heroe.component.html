@@ -1,0 +1,20 @@
+<h1 class="animated fadeIn fast">{{ mHeroe.nombre | uppercase }} <small> | Fecha de aparición: {{ mHeroe.aparicion | date:'dd/MM/yyyy' }}</small></h1>
+<hr>
+<button (click)="goBack()" type="button" class="btn btn-outline-primary float-right">Volver</button>
+<div class="row">
+  <div class="col-md-4 animated fadeIn fast">
+    <img [src]="mHeroe.img" class="img-fluid" [alt]="mHeroe.nombre">
+    <br>
+    
+  </div>
+  <div class="col-md-8 animated fadeIn fast">
+    <h2>{{ mHeroe.nombre }}</h2>
+    <p>
+      {{ mHeroe.bio }}
+    </p>
+    <div>
+      <img src="assets/images/logo_dc.png" class="img-fluid" alt="dc" width="90" height="auto" *ngIf="mHeroe.casa=='DC'">
+      <img src="assets/images/logo_marvel.png" class="img-fluid" alt="dc" width="110" height="auto" *ngIf="mHeroe.casa=='Marvel'">
+    </div>
+  </div>
+</div>
